@@ -1,0 +1,202 @@
+.hamburger-menu{
+  display: none;
+}
+
+.nav-menu{
+  display: flex;
+}
+
+
+
+@media(max-width: 1026px){  
+  .hamburger-menu{
+    display: block;
+  }
+  
+  .nav-menu{
+    display: none;
+  }
+
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.header__logo{
+  width: 150px;
+  height: 100px;
+  margin-top: 15px;
+  margin-left: 35px;
+}
+
+.nav-bar__link {
+  text-decoration: none;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  
+}
+
+a:active, /* активная/посещенная ссылка */
+a:hover,  /* при наведении */
+a {
+text-decoration: none;
+color: #666;
+}
+
+.nav-bar__link:hover {
+  text-decoration: underline;
+  
+}
+
+.header__login-button {
+  width: 5rem;
+  justify-content: center;
+ border: none;
+ border-radius: 10px;
+ padding: 5px;  
+}
+
+
+li {
+    list-style-type: none;
+    cursor: pointer;
+  }
+
+  .text-nav:hover {
+    color: #DAC1B3;
+  }
+
+  .vk{
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56.25px;
+    color: #DAC1B3;
+}
+
+.container{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);;
+}
+
+a{
+  color: black; 
+  text-decoration: none; 
+}
+
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 1;
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: rgb(238, 149, 90); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 8px; /* Some padding */
+  border-radius: 50px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+/* скрываем чекбокс */
+#menu__toggle {
+  opacity: 0;
+}
+/* стилизуем кнопку */
+.menu__btn {
+  display: flex; /* используем flex для центрирования содержимого */
+  align-items: center;  /* центрируем содержимое кнопки */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+/* добавляем "гамбургер" */
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+
+/* контейнер меню */
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  margin: 0;
+  padding: 25px 0;
+  list-style: none;
+  text-align: center;
+  background-color: #ECEFF1;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+}
+/* элементы меню */
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.menu__item:hover {
+  background-color: #CFD8DC;
+}
+
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+transition-duration: .25s;
+}
+.menu__box {
+transition-duration: .25s;
+}
+.menu__item {
+transition-duration: .25s;
+}
+
